@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+:root {
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Softred: hsl(345, 95%, 68%);
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark-blue-2: hsl(234, 17%, 12%);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--Very-dark-blue-2);
+  background-image: url(./images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+footer,
+main {
+  max-width: 900px;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+footer svg {
+  cursor: pointer;
+}
+
+footer svg {
+  position: relative;
+  transition: top 1s;
+}
+footer svg:hover {
+  top: -5px;
+}
+footer svg:hover path {
+  fill: var(--Softred);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+main h1 {
+  font-size: 0.8rem;
+  color: var(--White);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.box_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.box_wrapper h4 {
+  text-transform: uppercase;
+  color: var(--Grayish-blue);
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+}
+.box {
+  background-color: var(--Dark-desaturated-blue);
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  min-width: 90px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--Softred);
+  box-shadow: 1px 7px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.box::after {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--Very-dark-blue-2);
+  position: absolute;
+  border-radius: 50%;
+  left: -13%;
+}
+
+.box::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--Very-dark-blue-2);
+  position: absolute;
+  border-radius: 50%;
+  right: -13%;
+}
+
+.box hr {
+  position: absolute;
+  height: 1 px;
+  background-color: hsla(237, 15%, 26%, 0.384);
+  border: none;
+  /* border: 1px solid var(--Grayish-blue); */
+  left: 0;
+  right: 0;
+}
+
+.box h3 {
+  font-size: 2.3rem;
+}
+
+@media screen and (max-width: 400px) {
+  .box {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Softred);
+    box-shadow: 1px 7px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .box h3 {
+    font-size: 1.8rem;
+  }
+}
